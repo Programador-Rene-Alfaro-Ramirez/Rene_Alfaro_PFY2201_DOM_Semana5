@@ -1,0 +1,20 @@
+[
+{
+    "id": 1,
+    "titulo": "Psicodiagnóstico WISC V",
+    "descripcion": "Evaluación de la escala de inteligencia para niños y adolescentes con herramientas actualizadas y estandarizadas.",
+    "imagen": "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=500&q=80"
+},
+{
+    "id": 2,
+    "titulo": "Psicoterapia Clínica",
+    "descripcion": "Intervenciones especializadas para adultos, incluyendo abordajes para la depresión y ansiedad.",
+    "imagen": "https://images.unsplash.com/photo-1573497491768-6b830725a396?auto=format&fit=crop&w=500&q=80"
+},
+{
+    "id": 3,
+    "titulo": "Atención Online o Presencial",
+    "descripcion": "Sesiones flexibles adaptadas a tus necesidades, enfocadas en guiarte hacia tu bienestar integral.",
+    "imagen": "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=500&q=80"
+}
+]
