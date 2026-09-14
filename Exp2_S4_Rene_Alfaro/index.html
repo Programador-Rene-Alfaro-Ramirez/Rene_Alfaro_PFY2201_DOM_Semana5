@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rene Alfaro - Psicólogo Clínico</title>
+<!-- 1. Enlace a Bootstrap 5 mediante CDN -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Estilos personalizados -->
+<style>
+    .bg-custom-yellow { background-color: #ffc107 !important; }
+    .text-custom-teal { color: #45b5c4 !important; }
+    .btn-custom-teal { background-color: #45b5c4; color: white; border: none; }
+    .btn-custom-teal:hover { background-color: #3695a1; color: white; border-bottom: 3px solid #ffc107; }
+    .navbar-custom { border-bottom: 8px solid #ffc107; }
+    
+    /* Clase añadida para el evento mouseover de JS */
+    .card-dinamica { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+</style>
+</head>
+<body>
+
+    <!-- CORRECCIÓN: Etiqueta <header> añadida -->
+<header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-white navbar-custom">
+    <div class="container">
+        <a class="navbar-brand text-custom-teal fw-bold" href="#">Ps. Rene Alfaro</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto text-uppercase" style="font-size: 0.9rem; letter-spacing: 1px;">
+            <li class="nav-item"><a class="nav-link active" href="#inicio">Inicio</a></li>
+            <li class="nav-item"><a class="nav-link" href="#servicios">Servicios</a></li>
+            <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
+        </ul>
+        </div>
+    </div>
+    </nav>
+</header>
+
+<!-- Etiqueta <main> añadida -->
+<main>
+    <!-- CORRECCIÓN: Uso de <section> e incorporación de indicadores y 3er slide al carrusel -->
+    <section id="inicio">
+    <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+        <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+        <div class="carousel-item active" data-bs-interval="3000">
+            <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=1920&h=500&q=80" class="d-block w-100 object-fit-cover" style="height: 500px;" alt="Sesión de Terapia">
+            <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded p-3">
+            <!-- <h1> semántico -->
+            <h1 class="fw-bold text-white">Transformando Inquietudes en Soluciones</h1>
+            <p>Descubre un Enfoque Innovador en Terapia y Evaluaciones Psicológicas.</p>
+            </div>
+        </div>
+        <div class="carousel-item" data-bs-interval="3000">
+            <img src="https://images.unsplash.com/photo-1516585427167-9f4af9627e6c?auto=format&fit=crop&w=1920&h=500&q=80" class="d-block w-100 object-fit-cover" style="height: 500px;" alt="Atención Integral">
+            <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded p-3">
+            <h2 class="fw-bold h3 text-white">Atención Integral</h2>
+            <p>Un enfoque centrado en el desarrollo emocional en niños, adolescentes y adultos.</p>
+            </div>
+        </div>
+        <div class="carousel-item" data-bs-interval="3000">
+            <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=1920&h=500&q=80" class="d-block w-100 object-fit-cover" style="height: 500px;" alt="Terapia Presencial y Online">
+            <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded p-3">
+            <h2 class="fw-bold h3 text-white">Modalidad Presencial y Online</h2>
+            <p>Flexibilidad y comodidad para continuar con tu proceso terapéutico.</p>
+            </div>
+        </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Anterior</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Siguiente</span>
+        </button>
+    </div>
+    </section>
+
+    <!-- SECCIÓN PARA MANIPULACIÓN DEL DOM -->
+    <section id="servicios" class="container my-5">
+    <h2 class="text-center mb-4 fw-bold" style="color: #333;">Mis Servicios</h2>
+    <!-- Evento CLICK: Botón para mostrar alertas o filtrar -->
+    <div class="text-center mb-4">
+        <button id="btn-info" class="btn btn-outline-secondary">Ver información importante</button>
+    </div>
+
+    <!-- Contenedor vacío donde JS inyectará las tarjetas -->
+    <div id="contenedor-servicios" class="row g-4"></div>
+    </section>
+
+    <!-- SECCIÓN FORMULARIO PARA EVENTO SUBMIT -->
+    <section id="contacto" class="container my-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8 bg-light p-4 rounded shadow-sm">
+        <h2 class="text-center text-custom-teal mb-4 fw-bold">Agenda tu Hora</h2>
+    
+        <div id="alerta-form" class="alert d-none" role="alert"></div>
+
+        <form id="formulario-contacto">
+            <div class="mb-3">
+            <label for="nombre" class="form-label">Nombre Completo</label>
+            <input type="text" class="form-control" id="nombre" required>
+            </div>
+            <div class="mb-3">
+            <label for="email" class="form-label">Correo Electrónico</label>
+            <input type="email" class="form-control" id="email" required>
+            </div>
+            <button type="submit" class="btn btn-custom-teal w-100">Solicitar Cita</button>
+        </form>
+        </div>
+    </div>
+    </section>
+</main>
+
+<footer class="bg-custom-yellow text-dark text-center py-3 mt-5">
+    <p class="mb-0 fw-bold">Psicólogo Rene Alfaro | contacto@renealfaropsicologo.cl | +56 9 5610 4114</p>
+</footer>
+
+<!-- Extensión final de .css a .js -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Script para la Formativa 5 -->
+<script src="app.js"></script>
+</body>
+</html>
